@@ -43,7 +43,7 @@ To address this limitation, this project extends a CNN-CBAM architecture by inco
 # Model Architecture
 
 <p align="center">
-<img src="Images/Architecture.png" width="750">
+<img src="Images/architecture.png" width="750">
 </p>
 
 The proposed framework follows the pipeline below:
