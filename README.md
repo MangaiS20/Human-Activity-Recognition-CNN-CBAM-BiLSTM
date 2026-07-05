@@ -1,57 +1,72 @@
-# Human Activity Recognition using CNN, CBAM and BiLSTM
+# Human Activity Recognition using Hybrid CNN-CBAM-BiLSTM Deep Learning Framework
 
-A deep learning framework for **Human Activity Recognition (HAR)** that combines **Convolutional Neural Networks (CNN)**, the **Convolutional Block Attention Module (CBAM)**, and **Bidirectional Long Short-Term Memory (BiLSTM)** networks to classify human activities from wearable sensor data.
+A deep learning framework for **Human Activity Recognition (HAR)** that combines **Convolutional Neural Networks (CNN)**, the **Convolutional Block Attention Module (CBAM)**, and **Bidirectional Long Short-Term Memory (BiLSTM)** networks to classify human activities using wearable sensor data.
 
 ---
 
-## Project Overview
+## Overview
 
-Human Activity Recognition (HAR) aims to identify human activities using data collected from wearable sensors such as accelerometers and gyroscopes.
+Human Activity Recognition (HAR) is the task of automatically identifying human activities using data collected from wearable sensors such as accelerometers and gyroscopes.
 
-This project enhances a CNN-CBAM architecture by integrating **BiLSTM** to better capture temporal dependencies in multivariate sensor signals.
+This project presents a hybrid deep learning framework that integrates:
 
-The model was evaluated on two benchmark datasets:
+- **CNN** for spatial feature extraction
+- **CBAM** for channel and spatial attention
+- **BiLSTM** for temporal sequence learning
 
-- **KU-HAR**
-- **UCI-HAR**
+The proposed architecture was evaluated on two benchmark datasets:
+
+- KU-HAR
+- UCI-HAR
+
+---
+
+## Key Features
+
+- Hybrid CNN + CBAM + BiLSTM architecture
+- Attention-based feature extraction using CBAM
+- Temporal sequence modeling using BiLSTM
+- Evaluated on KU-HAR and UCI-HAR datasets
+- Performance evaluated using Accuracy, Precision, Recall, F1-Score, and Confusion Matrix
+- Implemented using TensorFlow and Keras
 
 ---
 
 ## Motivation
 
-While CNNs are effective at extracting spatial features, they often struggle to model long-term temporal dependencies in sequential sensor data.
+Traditional CNN models are effective at extracting spatial features but have limited capability in learning long-term temporal dependencies from sequential sensor data.
 
-To address this, this project combines:
-
-- CNN for spatial feature extraction
-- CBAM for channel and spatial attention
-- BiLSTM for temporal sequence learning
-
-The resulting hybrid architecture aims to improve overall HAR performance.
+To address this limitation, this project extends a CNN-CBAM architecture by incorporating **BiLSTM**, enabling the model to learn both spatial and temporal representations for improved Human Activity Recognition.
 
 ---
 
 # Model Architecture
 
 <p align="center">
-<img src="Images/architecture.png" width="750">
+<img src="Images/Architecture.png" width="750">
 </p>
 
-Pipeline:
+The proposed framework follows the pipeline below:
 
 ```
 Input Sensor Data
-        ↓
+        │
+        ▼
 CNN Feature Extraction
-        ↓
+        │
+        ▼
 CBAM Attention Module
-        ↓
-Residual Learning
-        ↓
+        │
+        ▼
+Residual Feature Learning
+        │
+        ▼
 BiLSTM
-        ↓
-Dense Layers
-        ↓
+        │
+        ▼
+Fully Connected Layers
+        │
+        ▼
 Softmax Classification
 ```
 
@@ -67,7 +82,7 @@ Softmax Classification
 
 ## UCI-HAR
 
-- Public benchmark HAR dataset
+- Public benchmark Human Activity Recognition dataset
 - 6 activity classes
 - Accelerometer and gyroscope signals
 
@@ -88,32 +103,39 @@ Softmax Classification
 
 # Experimental Results
 
-The model was evaluated using:
+The proposed CNN-CBAM-BiLSTM model was evaluated on two benchmark Human Activity Recognition datasets.
 
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- Confusion Matrix
+## Overall Performance
 
-## Performance
+| Dataset | Model | Test Accuracy |
+|----------|-------|--------------:|
+| KU-HAR | CNN + CBAM + BiLSTM | **96.41%** |
+| UCI-HAR | CNN + CBAM + BiLSTM | **94.41%** |
 
-| Dataset | Model | Metrics |
-|----------|-------|----------|
-| KU-HAR | CNN + CBAM + BiLSTM | Accuracy, Precision, Recall, F1 |
-| UCI-HAR | CNN + CBAM + BiLSTM | Accuracy, Precision, Recall, F1 |
+The proposed hybrid architecture achieved **96.41% test accuracy on the KU-HAR dataset** and **94.41% on the UCI-HAR dataset**, demonstrating its effectiveness in learning both spatial and temporal features from wearable sensor data.
 
 ---
 
-# Training Accuracy
+## KU-HAR Performance Metrics
+
+| Metric | Value |
+|---------|------:|
+| Test Accuracy | **96.41%** |
+| Precision | **0.9691** |
+| Recall | **0.9653** |
+| F1-Score | **0.9672** |
+
+---
+
+# Training and Validation Accuracy
 
 <p align="center">
-<img src="Images/accuracy.png" width="700">
+<img src="Images/Accuracy.png" width="700">
 </p>
 
 ---
 
-# Training Loss
+# Training and Validation Loss
 
 <p align="center">
 <img src="Images/loss.png" width="700">
@@ -121,7 +143,7 @@ The model was evaluated using:
 
 ---
 
-# F1 Score
+# Training and Validation F1-Score
 
 <p align="center">
 <img src="Images/f1_score.png" width="700">
@@ -143,9 +165,16 @@ The model was evaluated using:
 Human-Activity-Recognition-CNN-CBAM-BiLSTM
 │
 ├── images/
-├── notebooks/
+│   ├── Architecture.png
+│   ├── Accuracy.png
+│   ├── loss.png
+│   ├── f1_score.png
+│   └── confusion_matrix.png
+│
 ├── dataset/
+│
 ├── results/
+│
 ├── HAR_CNN_CBAM_BiLSTM.ipynb
 ├── HAR_CNN_CBAM_BiLSTM_Updated.py
 ├── README.md
@@ -158,11 +187,21 @@ Human-Activity-Recognition-CNN-CBAM-BiLSTM
 
 # Installation
 
+Clone the repository:
+
 ```bash
 git clone https://github.com/MangaiS20/Human-Activity-Recognition-CNN-CBAM-BiLSTM.git
+```
 
+Move to the project folder:
+
+```bash
 cd Human-Activity-Recognition-CNN-CBAM-BiLSTM
+```
 
+Install the required packages:
+
+```bash
 pip install -r requirements.txt
 ```
 
@@ -170,29 +209,32 @@ pip install -r requirements.txt
 
 # Usage
 
-Open and execute:
+Run the Jupyter Notebook:
 
 ```
 HAR_CNN_CBAM_BiLSTM.ipynb
 ```
 
-or run the Python implementation after configuring the dataset paths.
+or execute the Python implementation after configuring the dataset paths.
 
 ---
 
 # Future Improvements
 
-- Evaluate additional HAR datasets
+- Evaluate on additional HAR datasets
 - Hyperparameter optimization
 - Model compression for edge devices
-- Real-time deployment
+- Real-time Human Activity Recognition
 - Explainable AI (XAI) analysis
+- Deployment as a lightweight inference model
 
 ---
 
 # References
 
-1. Woo S, Park J, Lee JY, Kweon IS. **CBAM: Convolutional Block Attention Module.**
+1. Woo S., Park J., Lee J. Y., Kweon I. S.
+   **CBAM: Convolutional Block Attention Module.**
+
 2. Human Activity Recognition Using Attention-Mechanism-Based Deep Learning Feature Combination.
 
 ---
@@ -203,6 +245,12 @@ or run the Python implementation after configuring the dataset paths.
 
 **M.Sc. Data Science**
 
-Python | SQL | Machine Learning | Data Analytics
+**Python | SQL | Machine Learning | Data Analytics**
 
-Open to Data Analyst, Machine Learning and AI opportunities.
+📧 Email: **mangaiofficial20@gmail.com**
+
+💼 LinkedIn: **https://www.linkedin.com/in/mangais20**
+
+---
+
+⭐ If you find this project useful, consider giving it a star.
