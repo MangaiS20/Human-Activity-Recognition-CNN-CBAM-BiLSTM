@@ -108,7 +108,7 @@ The model was evaluated using:
 # Training Accuracy
 
 <p align="center">
-<img src="images/accuracy.png" width="700">
+<img src="Images/accuracy.png" width="700">
 </p>
 
 ---
@@ -116,7 +116,7 @@ The model was evaluated using:
 # Training Loss
 
 <p align="center">
-<img src="images/loss.png" width="700">
+<img src="Images/loss.png" width="700">
 </p>
 
 ---
@@ -124,7 +124,7 @@ The model was evaluated using:
 # F1 Score
 
 <p align="center">
-<img src="images/f1_score.png" width="700">
+<img src="Images/f1_score.png" width="700">
 </p>
 
 ---
@@ -132,7 +132,7 @@ The model was evaluated using:
 # Confusion Matrix
 
 <p align="center">
-<img src="images/confusion_matrix.png" width="700">
+<img src="Images/confusion_matrix.png" width="700">
 </p>
 
 ---
