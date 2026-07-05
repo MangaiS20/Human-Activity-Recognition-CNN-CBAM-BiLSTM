@@ -34,7 +34,7 @@ The resulting hybrid architecture aims to improve overall HAR performance.
 # Model Architecture
 
 <p align="center">
-<img src="images/architecture.png" width="750">
+<img src="Images/architecture.png" width="750">
 </p>
 
 Pipeline:
